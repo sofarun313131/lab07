@@ -1,0 +1,10 @@
+name: CMake Build and Install
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
+    - run: cmake --build _build
+    - run: cmake --build _build --target install

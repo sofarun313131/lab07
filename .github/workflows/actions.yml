@@ -1,10 +1,22 @@
-name: CMake Build and Install
+name: CMake Testing
+
 on: [push, pull_request]
+
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v4
-    - run: cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
-    - run: cmake --build _build
-    - run: cmake --build _build --target install
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive  # ОБЯЗАТЕЛЬНО скачиваем подмодуль GTest
+
+    - name: Configure CMake with Tests
+      run: cmake -H. -B_build -DBUILD_TESTS=ON -DCMAKE_INSTALL_PREFIX=_install
+
+    - name: Build project and tests
+      run: cmake --build _build
+
+    - name: Run Unit Tests
+      run: cmake --build _build --target test -- ARGS=--verbose

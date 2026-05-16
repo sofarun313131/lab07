@@ -18,14 +18,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      # Строчку submodules убрали, чтобы избежать фатальных ошибок Git
-
-    # Самостоятельно скачиваем чистый gtest прямо в облачную виртуалку
-    - name: Setup Google Test Submodule
-      run: |
-        rm -rf third-party/gtest
-        git clone https://github.com/google/googletest third-party/gtest
-        cd third-party/gtest && git checkout release-1.8.1
 
     - name: Install Packaging Tools
       run: |
@@ -41,13 +33,11 @@ jobs:
     - name: Run Tests
       run: cmake --build _build --target test
 
-    # Собираем пакеты
     - name: Generate Packages via CPack
       run: |
         cd _build
         cpack
 
-    # Публикуем релиз со всеми бинарниками
     - name: Create GitHub Release
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v2

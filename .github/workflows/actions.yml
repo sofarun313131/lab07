@@ -1,10 +1,21 @@
-name: CMake Packaging
+name: CMake Release Packaging
 
-on: [push, pull_request]
+# Конвейер запускается при пушах в main и ОБЯЗАТЕЛЬНО при создании тегов (v*)
+on:
+  push:
+    branches: [ main, master ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main, master ]
 
 jobs:
-  build_and_package:
+  build_and_release:
     runs-on: ubuntu-latest
+
+    # Даем права на создание релизов внутри репозитория
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout repository
@@ -12,8 +23,11 @@ jobs:
       with:
         submodules: recursive
 
+    - name: Install RPM Tools
+      run: sudo apt-get update && sudo apt-get install -y rpm
+
     - name: Configure CMake
-      run: cmake -H. -B_build -DBUILD_TESTS=ON -DCPACK_GENERATOR="TGZ"
+      run: cmake -H. -B_build -DBUILD_TESTS=ON
 
     - name: Build Project
       run: cmake --build _build
@@ -21,13 +35,23 @@ jobs:
     - name: Run Tests
       run: cmake --build _build --target test
 
-    - name: Generate Package via CPack
+    # Генерируем сразу несколько типов пакетов (архив и DEB/RPM инсталляторы)
+    # Это заменяет ветвление из старого Travis CI
+    - name: Generate Packages via CPack
       run: |
         cd _build
         cpack -G "TGZ"
+        cpack -G "DEB"
+        cpack -G "RPM"
 
-    - name: Upload Package Artifact
-      uses: actions/upload-artifact@v4
+    # Шаг автоматической публикации релиза (срабатывает ТОЛЬКО если это пуш тега)
+    - name: Create GitHub Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v2
       with:
-        name: print-package
-        path: _build/*.tar.gz
+        files: |
+          _build/*.tar.gz
+          _build/*.deb
+          _build/*.rpm
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

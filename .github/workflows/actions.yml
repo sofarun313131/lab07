@@ -1,9 +1,19 @@
+name: CMake Release Packaging
+
+on:
+  push:
+    branches: [ main, master ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main, master ]
+
+permissions:
+  contents: write
+
 jobs:
   build_and_release:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
 
     steps:
     - name: Checkout repository
@@ -11,14 +21,15 @@ jobs:
       with:
         submodules: recursive
 
-    # Гарантируем, что в облаке есть инструменты для сборки DEB и RPM
+    # Устанавливаем системные утилиты для сборки DEB и RPM
     - name: Install Packaging Tools
       run: |
         sudo apt-get update
-        sudo apt-get install -y rpm binutils dpkg
+        sudo apt-get install -y rpm dpkg-dev
 
+    # Конфигурируем и сразу говорим CMake, что мы планируем собирать пакеты TGZ, DEB и RPM
     - name: Configure CMake
-      run: cmake -H. -B_build -DBUILD_TESTS=ON
+      run: cmake -H. -B_build -DBUILD_TESTS=ON -DCPACK_GENERATOR="TGZ;DEB;RPM"
 
     - name: Build Project
       run: cmake --build _build
@@ -26,26 +37,20 @@ jobs:
     - name: Run Tests
       run: cmake --build _build --target test
 
-    # Собираем пакеты по отдельности, чтобы точно видеть, если какой-то упадет
+    # Собираем пакеты (вызов без флагов -G, так как они уже прописаны в конфигурации выше)
     - name: Generate Packages via CPack
       run: |
         cd _build
-        cpack -G TGZ
-        cpack -G DEB
-        cpack -G RPM
+        cpack
 
-    # Выводим список файлов в консоль экшена (для дебага, если что-то пойдет не так)
-    - name: List Generated Packages
-      run: find _build/ -maxdepth 2 -name "*.deb" -o -name "*.rpm" -o -name "*.tar.gz"
-
-    # Используем двойную звездочку , чтобы экшен нашел файлы в ЛЮБЫХ подпапках _build
+    # Публикуем релиз
     - name: Create GitHub Release
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v2
       with:
         files: |
-          _build//*.tar.gz
-          _build//*.deb
-          _build//*.rpm
+          _build/*.tar.gz
+          _build/*.deb
+          _build/*.rpm
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

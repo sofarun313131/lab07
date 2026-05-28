@@ -1,3 +1,6 @@
+cd ~/sofarun313131/workspace/projects/lab07
+
+cat > .github/workflows/actions.yml <<'EOF'
 name: CMake Release Packaging
 
 on:
@@ -27,7 +30,7 @@ jobs:
         sudo apt-get install -y rpm dpkg-dev
 
     - name: Configure CMake
-      run: cmake -H. -B_builds -DBUILD_TESTS=ON -DCPACK_GENERATOR="TGZ;DEB;RPM"
+      run: cmake -H. -B_builds -DBUILD_TESTS=ON -DCPACK_GENERATOR="TGZ;DEB;RPM" -DCPACK_PACKAGE_CONTACT="sofarun313131@bmstu.ru"
 
     - name: Build Project
       run: cmake --build _builds
@@ -50,3 +53,4 @@ jobs:
           _builds/*.rpm
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+EOF

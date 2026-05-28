@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+# ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ ДЛЯ ВСЕХ ШАГОВ СБОРКИ
+env:
+  CXXFLAGS: "-Wno-error=maybe-uninitialized"
+
 jobs:
   build_and_release:
     runs-on: ubuntu-latest
@@ -18,8 +22,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        submodules: false
 
     - name: Install Packaging Tools
       run: |

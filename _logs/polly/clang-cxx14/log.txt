@@ -1,0 +1,284 @@
+Execute command: [
+  `which`
+  `cmake`
+]
+[/home/sofar/sofarun313131/workspace/projects/lab07]> "which" "cmake"
+/usr/bin/cmake
+Execute command: [
+  `cmake`
+  `--version`
+]
+[/home/sofar/sofarun313131/workspace/projects/lab07]> "cmake" "--version"
+cmake version 3.31.6
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Execute command: [
+  `cmake`
+  `-H.`
+  `-B/home/sofar/sofarun313131/workspace/projects/lab07/_builds/clang-cxx14`
+  `-GUnix Makefiles`
+  `-DCMAKE_TOOLCHAIN_FILE=/home/sofar/sofarun313131/workspace/projects/lab07/tools/polly/clang-cxx14.cmake`
+  `-DCMAKE_INSTALL_PREFIX=/home/sofar/sofarun313131/workspace/projects/lab07/_install/clang-cxx14`
+]
+[/home/sofar/sofarun313131/workspace/projects/lab07]> "cmake" "-H." "-B/home/sofar/sofarun313131/workspace/projects/lab07/_builds/clang-cxx14" "-GUnix Makefiles" "-DCMAKE_TOOLCHAIN_FILE=/home/sofar/sofarun313131/workspace/projects/lab07/tools/polly/clang-cxx14.cmake" "-DCMAKE_INSTALL_PREFIX=/home/sofar/sofarun313131/workspace/projects/lab07/_install/clang-cxx14"
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_config_sha1.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:8 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_lock_directory.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_config_sha1.cmake:9 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:8 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_make_directory.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_config_sha1.cmake:10 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:8 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_lock_directory.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_make_directory.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_config_sha1.cmake:10 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:8 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_self.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:9 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_lock_directory.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_toolchain_sha1.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:10 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_make_directory.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_toolchain_sha1.cmake:6 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:10 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_lock_directory.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_make_directory.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_toolchain_sha1.cmake:6 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:10 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_set_config_location.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_apply_gate_settings.cmake:13 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:5 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_self.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_finalize.cmake:6 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_add_package.cmake:7 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:34 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_lock_directory.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_private_data.cmake:12 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:35 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+CMake Deprecation Warning at /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_calculate_self.cmake:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+Call Stack (most recent call first):
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/modules/hunter_initialize.cmake:4 (include)
+  /home/sofar/.hunter/_Base/Download/Hunter/0.23.251/5659b15/Unpacked/cmake/Hunter:36 (include)
+  cmake/HunterGate.cmake:540 (include)
+  CMakeLists.txt:5 (HunterGate)
+
+
+-- [polly] Used toolchain: clang / c++14 support
+-- The C compiler identification is Clang 19.1.7
+-- The CXX compiler identification is Clang 19.1.7
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/sofar/sofarun313131/workspace/projects/lab07/_builds/clang-cxx14
+Execute command: [
+  `cmake`
+  `--build`
+  `/home/sofar/sofarun313131/workspace/projects/lab07/_builds/clang-cxx14`
+  `--target`
+  `install`
+  `--`
+]
+[/home/sofar/sofarun313131/workspace/projects/lab07]> "cmake" "--build" "/home/sofar/sofarun313131/workspace/projects/lab07/_builds/clang-cxx14" "--target" "install" "--"
+[ 12%] Building CXX object CMakeFiles/print.dir/sources/print.cpp.o
+[ 25%] Linking CXX static library libprint.a
+[ 25%] Built target print
+[ 37%] Building CXX object CMakeFiles/example1.dir/examples/example1.cpp.o
+[ 50%] Linking CXX executable example1
+[ 50%] Built target example1
+[ 62%] Building CXX object CMakeFiles/example2.dir/examples/example2.cpp.o
+[ 75%] Linking CXX executable example2
+[ 75%] Built target example2
+[ 87%] Building CXX object CMakeFiles/demo.dir/demo/main.cpp.o
+[100%] Linking CXX executable demo
+[100%] Built target demo
+Install the project...
+-- Install configuration: ""
+-- Installing: /home/sofar/sofarun313131/workspace/projects/lab07/_install/clang-cxx14/bin/demo
+Execute command: [
+  `ctest`
+]
+[/home/sofar/sofarun313131/workspace/projects/lab07/_builds/clang-cxx14]> "ctest"
+*********************************
+No test configuration file found!
+*********************************
+Usage
+
+  ctest [options]
+

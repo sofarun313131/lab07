@@ -1,6 +1,3 @@
-cd ~/sofarun313131/workspace/projects/lab07
-
-cat > .github/workflows/actions.yml <<'EOF'
 name: CMake Release Packaging
 
 on:
@@ -53,4 +50,3 @@ jobs:
           _builds/*.rpm
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-EOF
